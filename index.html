@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+    <title>MediaPipe 手勢語音回饋示範</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>MediaPipe 手勢語音回饋</h1>
+
+    <p class="hint">請允許相機存取，然後用手勢控制播放。偵測到 OK 手勢會開始播放 YouTube 音樂，偵測到讚手勢會給予語音回饋，偵測到攤開手掌會停止音樂。</p>
+
+    <div class="camera-container">
+      <video id="video" playsinline></video>
+      <canvas id="output"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="startCamera">啟動相機</button>
+      <button id="toggleFacing">切換前後鏡頭</button>
+      <div id="status">狀態：等待偵測...</div>
+    </div>
+
+    <div id="playerContainer">
+      <div id="player"></div>
+    </div>
+
+    <!-- MediaPipe scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
